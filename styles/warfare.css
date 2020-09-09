@@ -1,0 +1,122 @@
+.warfare.window-app .window-content {
+	background: var(--bg);
+	border: 8px solid var(--base);
+	box-shadow: inset 0 0 15px 5px rgba(0, 0, 0, .4);
+}
+
+.warfare form {
+	padding: 12px;
+}
+
+.warfare-unit-config {
+	position: absolute;
+	top: 46px;
+	right: 16px;
+	font-size: 16px;
+	color: var(--config-colour);
+}
+
+.warfare form input {
+	display: none;
+	width: 100%;
+	height: unset;
+	border: none;
+	background: transparent;
+}
+
+.warfare form input.warfare-unit-stat,
+.warfare form input.warfare-unit-cost {
+	max-width: 45px;
+	text-align: center;
+}
+
+.warfare form input:focus {
+	box-shadow: none;
+}
+
+.warfare form.warfare-config input {
+	display: block;
+}
+
+.warfare form.warfare-config label span {
+	display: none;
+}
+
+.warfare-unit-keyword-row {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.warfare-unit-keyword-row label {
+	margin-right: 5px;
+}
+
+.warfare-unit-keyword-row label span {
+	text-transform: uppercase;
+	color: var(--base);
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.warfare form .warfare-unit-keyword-row input {
+	max-width: 200px;
+}
+
+.warfare-unit-keyword-row input:first-child {
+	margin-right: 8px;
+}
+
+label.warfare-unit-name {
+	text-transform: uppercase;
+	font-weight: bold;
+	color: var(--highlight);
+	font-size: 18px;
+	width: 100%;
+	display: block;
+	border-bottom: 1px solid var(--underscore);
+	margin-bottom: 2px;
+}
+
+.warfare-unit-stat-row {
+	display: flex;
+	border-bottom: 1px solid var(--underscore);
+	padding: 1px 0;
+}
+
+.warfare-unit-cost-row {
+	margin-top: 10px;
+	text-transform: uppercase;
+	color: var(--base);
+	display: flex;
+	justify-content: flex-end;
+	padding: 0 0 4px 0;
+	align-items: center;
+}
+
+.warfare-unit-cost-row h3 {
+	font-size: 13px;
+	margin: 0 5px 0 0;
+}
+
+.warfare-unit-stat-row > div {
+	width: 50%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.warfare-unit-stat-key {
+	text-transform: uppercase;
+	color: var(--highlight);
+	font-weight: bold;
+	font-size: 14px;
+	width: 50%;
+	min-width: 95px;
+}
+
+.warfare-unit-stat-value {
+	width: 50%;
+	font-size: 14px;
+	color: var(--highlight);
+	font-weight: bold;
+}

@@ -1,0 +1,117 @@
+<form class="{{#if warfare.sheet.config}}warfare-config{{/if}}" autocomplete="off">
+	{{#if editable}}<a class="warfare-unit-config"><i class="fas fa-cog"></i></a>{{/if}}
+	<aside class="warfare-unit-banners"></aside>
+	<header>
+		<label class="warfare-unit-name">
+			<span>{{actor.name}}</span>
+			<input type="text" class="warfare-unit-name" data-dtype="String" name="name"
+			       value="{{actor.name}}" placeholder="{{localize 'WARFARE.UnitName'}}">
+		</label>
+		<div class="warfare-unit-keyword-row">
+			<label>
+				<span>{{warfare.details.ancestry}}</span>
+				<input type="text" class="warfare-unit-keyword" data-dtype="String"
+				       name="flags.warfare.details.ancestry" value="{{warfare.details.ancestry}}"
+				       placeholder="{{localize 'WARFARE.Ancestry'}}">
+			</label>
+			<label>
+				<span>{{warfare.details.experience}}</span>
+				<input type="text" class="warfare-unit-keyword" data-dtype="String"
+				       name="flags.warfare.details.experience"
+				       value="{{warfare.details.experience}}"
+				       placeholder="{{localize 'WARFARE.Experience'}}">
+			</label>
+		</div>
+		<div class="warfare-unit-keyword-row">
+			<label>
+				<span>{{warfare.details.equipment}}</span>
+				<input type="text" class="warfare-unit-keyword" data-dtype="String"
+				       name="flags.warfare.details.equipment" value="{{warfare.details.equipment}}"
+				       placeholder="{{localize 'DND5E.ItemTypeEquipment'}}">
+			</label>
+			<label>
+				<span>{{warfare.details.type}}</span>
+				<input type="text" class="warfare-unit-keyword" data-dtype="String"
+				       name="flags.warfare.details.type" value="{{warfare.details.type}}"
+				       placeholder="{{localize 'DND5E.Type'}}">
+			</label>
+		</div>
+	</header>
+	<section class="warfare-unit-stats">
+		<div class="warfare-unit-stat-row warfare-unit-cost-row">
+			<h3>{{localize 'WARFARE.Cost'}}:</h3>
+			<label>
+				<span>{{unitCost}}</span>
+				<input type="text" class="warfare-unit-cost" data-dtype="Number" placeholder="&mdash;"
+				       name="flags.warfare.stats.cost" value="{{warfare.stats.cost}}">
+			</label>
+		</div>
+		<div class="warfare-unit-stat-row">
+			<div>
+				<div class="warfare-unit-stat-key">{{localize 'WARFARE.Attack'}}:</div>
+				<div class="warfare-unit-stat-value">
+					<label>
+						<span>{{number-format warfare.stats.attack sign=true decimals=0}}</span>
+						<input type="text" class="warfare-unit-stat" data-dtype="Number" placeholder="&mdash;"
+						       name="flags.warfare.stats.attack" value="{{warfare.stats.attack}}">
+					</label>
+				</div>
+			</div>
+			<div>
+				<div class="warfare-unit-stat-key">{{localize 'WARFARE.Defense'}}:</div>
+				<div class="warfare-unit-stat-value">
+					<label>
+						<span>{{warfare.stats.defense}}</span>
+						<input type="text" class="warfare-unit-stat" data-dtype="Number" placeholder="&mdash;"
+						       name="flags.warfare.stats.defense" value="{{warfare.stats.defense}}">
+					</label>
+				</div>
+			</div>
+		</div>
+		<div class="warfare-unit-stat-row">
+			<div>
+				<div class="warfare-unit-stat-key">{{localize 'WARFARE.Power'}}:</div>
+				<div class="warfare-unit-stat-value">
+					<label>
+						<span>{{number-format warfare.stats.power sign=true decimals=0}}</span>
+						<input type="text" class="warfare-unit-stat" data-dtype="Number" placeholder="&mdash;"
+						       name="flags.warfare.stats.power" value="{{warfare.stats.power}}">
+					</label>
+				</div>
+			</div>
+			<div>
+				<div class="warfare-unit-stat-key">{{localize 'WARFARE.Toughness'}}:</div>
+				<div class="warfare-unit-stat-value">
+					<label>
+						<span>{{warfare.stats.toughness}}</span>
+						<input type="text" class="warfare-unit-stat" data-dtype="Number" placeholder="&mdash;"
+						       name="flags.warfare.stats.toughness" value="{{warfare.stats.toughness}}">
+					</label>
+				</div>
+			</div>
+		</div>
+		<div class="warfare-unit-stat-row">
+			<div>
+				<div class="warfare-unit-stat-key">{{localize 'WARFARE.Morale'}}:</div>
+				<div class="warfare-unit-stat-value">
+					<label>
+						<span>{{number-format warfare.stats.morale sign=true decimals=0}}</span>
+						<input type="text" class="warfare-unit-stat" data-dtype="Number" placeholder="&mdash;"
+						       name="flags.warfare.stats.morale" value="{{warfare.stats.morale}}">
+					</label>
+				</div>
+			</div>
+			<div>
+				<div class="warfare-unit-stat-key">{{localize 'WARFARE.Size'}}:</div>
+				<div class="warfare-unit-stat-value">
+					<label>
+						<span>{{warfare.stats.size}}</span>
+						<input type="text" class="warfare-unit-stat warfare-unit-size" data-dtype="String"
+						       placeholder="1d4" name="flags.warfare.stats.size"
+						       value="{{warfare.stats.size}}">
+					</label>
+				</div>
+			</div>
+		</div>
+	</section>
+</form>
