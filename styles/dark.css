@@ -1,1 +1,13 @@
-
+:root {
+	--base: #51586a;
+	--border: #434857;
+	--bg: #252830;
+	--highlight: #cfd2da;
+	--config-colour: #999;
+	--underscore: #434857;
+	--box-shadow: none;
+	--edit: white;
+	--alert: #c53131;
+	--text: #cfd2da;
+	--header: #51586a;
+}

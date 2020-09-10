@@ -114,4 +114,52 @@
 			</div>
 		</div>
 	</section>
+	<section class="warfare-config-add-items">
+		<a class="warfare-config-add-item">
+			<span>{{localize 'WARFARE.AddTrait'}}</span>
+			<i class="fas fa-cog"></i>
+		</a>
+		<a class="warfare-config-add-item" data-cost="1" data-type="action">
+			<span>{{localize 'WARFARE.AddAction'}}</span>
+			<i class="fas fa-cog"></i>
+		</a>
+		<a class="warfare-config-add-item" data-cost="1" data-type="order">
+			<span>{{localize 'WARFARE.AddOrder'}}</span>
+			<i class="fas fa-cog"></i>
+		</a>
+	</section>
+	{{#*inline 'feature'}}
+		<div class="warfare-unit-feature">
+			<div class="warfare-config-item" data-item-id="{{_id}}">
+				<a class="warfare-config-edit-item"><i class="fas fa-cog"></i></a>
+				<a class="warfare-config-rm-item"><i class="fas fa-trash"></i></a>
+			</div>
+			<strong>{{name}}{{#if isOrder}}!{{else}}.{{/if}}</strong>
+			{{{data.description.enriched}}}
+		</div>
+	{{/inline}}
+	{{#if warfareItems.traits.length}}
+	<section class="warfare-unit-feature-block">
+		<h3>{{localize 'WARFARE.Traits'}}</h3>
+		{{#each warfareItems.traits}}
+			{{> feature}}
+		{{/each}}
+	</section>
+	{{/if}}
+	{{#if warfareItems.actions.length}}
+	<section class="warfare-unit-feature-block">
+		<h3>{{localize 'WARFARE.Actions'}}</h3>
+		{{#each warfareItems.actions}}
+			{{> feature}}
+		{{/each}}
+	</section>
+	{{/if}}
+	{{#if warfareItems.orders.length}}
+	<section class="warfare-unit-feature-block">
+		<h3>{{localize 'WARFARE.Orders'}}</h3>
+		{{#each warfareItems.orders}}
+			{{> feature isOrder=true}}
+		{{/each}}
+	</section>
+	{{/if}}
 </form>

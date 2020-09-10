@@ -4,6 +4,10 @@ A [FoundryVTT](https://foundryvtt.com/) module that provides an implementation o
 
 This project is not affiliated with MCDM and is in no way endorsed by them.
 
+![Unit Card Light](https://bitbucket.org/Fyorl/warfare/raw/master/unit-card-light.jpg)
+
+![Unit Card Dark](https://bitbucket.org/Fyorl/warfare/raw/master/unit-card-dark.jpg)
+
 ## License
 
 This module implements game mechanics as described in *Appendix 2: Warfare* of the *Strongholds & Followers* publication under the terms of the Open Game License v1.0a. A copy of this license is distributed along with the module, please see `OGL.txt` for the full terms of the license.

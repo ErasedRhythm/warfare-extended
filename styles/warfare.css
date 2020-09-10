@@ -1,7 +1,7 @@
 .warfare.window-app .window-content {
 	background: var(--bg);
-	border: 8px solid var(--base);
-	box-shadow: inset 0 0 15px 5px rgba(0, 0, 0, .4);
+	border: 8px solid var(--border);
+	box-shadow: var(--box-shadow);
 }
 
 .warfare form {
@@ -16,12 +16,18 @@
 	color: var(--config-colour);
 }
 
+.warfare-unit-config:hover {
+	text-shadow: none;
+	color: var(--highlight);
+}
+
 .warfare form input {
 	display: none;
 	width: 100%;
 	height: unset;
 	border: none;
 	background: transparent;
+	color: var(--edit);
 }
 
 .warfare form input.warfare-unit-stat,
@@ -77,6 +83,10 @@ label.warfare-unit-name {
 	margin-bottom: 2px;
 }
 
+.warfare-unit-stats {
+	margin-bottom: 8px;
+}
+
 .warfare-unit-stat-row {
 	display: flex;
 	border-bottom: 1px solid var(--underscore);
@@ -119,4 +129,71 @@ label.warfare-unit-name {
 	font-size: 14px;
 	color: var(--highlight);
 	font-weight: bold;
+}
+
+.warfare-config-add-items {
+	display: none;
+	justify-content: space-between;
+	margin-bottom: 4px;
+}
+
+.warfare-config .warfare-config-add-items {
+	display: flex;
+}
+
+.warfare-config-add-items a,
+.warfare-config-item a {
+	text-transform: uppercase;
+	font-size: 12px;
+	color: var(--config-colour);
+}
+
+.warfare-config-item a {
+	display: inline-block;
+}
+
+.warfare-config-item a.warfare-alert,
+.warfare-config-item a.warfare-alert:hover {
+	color: var(--alert);
+}
+
+.warfare-config-add-items a:hover,
+.warfare-config-item a:hover {
+	text-shadow: none;
+	color: var(--highlight);
+}
+
+.warfare-config-item {
+	display: none;
+}
+
+.warfare-config .warfare-config-item {
+	display: inline-block;
+}
+
+.warfare-unit-feature-block h3 {
+	text-transform: uppercase;
+	font-size: 15px;
+	font-weight: bold;
+	color: var(--header);
+	margin-bottom: 0;
+}
+
+.warfare-unit-feature {
+	margin-bottom: 8px;
+	font-size: 13px;
+	text-align: justify;
+	color: var(--text);
+}
+
+.warfare-unit-feature strong {
+	text-align: left;
+}
+
+.warfare-unit-feature strong + p {
+	display: inline;
+}
+
+.warfare-unit-feature p {
+	margin: 6px 0;
 }
