@@ -48,7 +48,9 @@
 		</div>
 		<div class="warfare-unit-stat-row">
 			<div>
-				<div class="warfare-unit-stat-key">{{localize 'WARFARE.Attack'}}:</div>
+				<div class="warfare-unit-stat-key warfare-rollable" data-roll="attack">
+					{{localize 'WARFARE.Attack'}}:
+				</div>
 				<div class="warfare-unit-stat-value">
 					<label>
 						<span>{{number-format warfare.stats.attack sign=true decimals=0}}</span>
@@ -70,7 +72,9 @@
 		</div>
 		<div class="warfare-unit-stat-row">
 			<div>
-				<div class="warfare-unit-stat-key">{{localize 'WARFARE.Power'}}:</div>
+				<div class="warfare-unit-stat-key warfare-rollable" data-roll="power">
+					{{localize 'WARFARE.Power'}}:
+				</div>
 				<div class="warfare-unit-stat-value">
 					<label>
 						<span>{{number-format warfare.stats.power sign=true decimals=0}}</span>
@@ -92,7 +96,9 @@
 		</div>
 		<div class="warfare-unit-stat-row">
 			<div>
-				<div class="warfare-unit-stat-key">{{localize 'WARFARE.Morale'}}:</div>
+				<div class="warfare-unit-stat-key warfare-rollable" data-roll="morale">
+					{{localize 'WARFARE.Morale'}}:
+				</div>
 				<div class="warfare-unit-stat-value">
 					<label>
 						<span>{{number-format warfare.stats.morale sign=true decimals=0}}</span>

@@ -48,6 +48,14 @@
 	display: none;
 }
 
+.warfare-rollable {
+	cursor: pointer;
+}
+
+.warfare-rollable:hover {
+	text-decoration: underline;
+}
+
 .warfare-unit-keyword-row {
 	display: flex;
 	justify-content: flex-start;

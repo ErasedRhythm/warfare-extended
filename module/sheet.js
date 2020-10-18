@@ -25,6 +25,7 @@ export default class WarfareUnitSheet extends ActorSheet5e {
 		html.find('.warfare-config-rm-item').click(this._onRemoveItem.bind(this));
 		html.find('.warfare-config-edit-item').click(this._onEditItem.bind(this));
 		html.find('.warfare-unit-casualties-pip').click(this._onCasualtyClicked.bind(this));
+		html.find('[data-roll]').click(this._onRollAttribute.bind(this));
 	}
 
 	getData () {
@@ -138,6 +139,10 @@ export default class WarfareUnitSheet extends ActorSheet5e {
 	_onConfigClicked () {
 		const currentStatus = !!this.actor.getFlag('warfare', 'sheet.config');
 		this.actor.setFlag('warfare', 'sheet.config', !currentStatus);
+	}
+
+	_onRollAttribute (evt) {
+		this.actor.rollUnitAttribute(evt.currentTarget.dataset.roll, {event: evt});
 	}
 
 	_prepareItems () {

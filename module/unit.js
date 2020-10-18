@@ -1,11 +1,18 @@
 import Actor5e from '../../../systems/dnd5e/module/actor/entity.js';
+import {d20Roll} from '../../../systems/dnd5e/module/dice.js';
+
+const attributeLabels = {
+	attack: 'WARFARE.Attack',
+	power: 'WARFARE.Power',
+	morale: 'WARFARE.Morale'
+};
 
 export default function extendActor () {
 	Actor5e.prototype.prepareDerivedData = (function () {
 		const original = Actor5e.prototype.prepareDerivedData;
 		return function () {
 			original.apply(this, arguments);
-			const stats = this.data.flags.warfare?.stats;
+			const stats = this.getFlag('warfare', 'stats');
 			if (!stats) {
 				return;
 			}
@@ -29,4 +36,22 @@ export default function extendActor () {
 			stats.casualties.diminished = stats.casualties.remaining <= stats.casualties.max / 2;
 		}
 	})();
+
+	Actor5e.prototype.rollUnitAttribute = function (attr, options = {}) {
+		const stats = this.getFlag('warfare', 'stats');
+		if (!stats) {
+			return;
+		}
+
+		const parts = ['@mod'];
+		const data = {mod: stats[attr]};
+		const rollData = mergeObject(options, {
+			parts: parts,
+			data: data,
+			title: game.i18n.localize(attributeLabels[attr]),
+			speaker: ChatMessage.getSpeaker({actor: this})
+		});
+
+		return d20Roll(rollData);
+	};
 };
