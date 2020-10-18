@@ -24,12 +24,13 @@ export default class WarfareUnitSheet extends ActorSheet5e {
 		html.find('.warfare-config-add-item').click(this._onAddItem.bind(this));
 		html.find('.warfare-config-rm-item').click(this._onRemoveItem.bind(this));
 		html.find('.warfare-config-edit-item').click(this._onEditItem.bind(this));
+		html.find('.warfare-unit-casualties-pip').click(this._onCasualtyClicked.bind(this));
 	}
 
 	getData () {
 		const data = super.getData();
-		data.warfare = this.actor.data.flags.warfare;
-		data.unitCost = data.warfare?.stats?.cost == null ? '—' : data.warfare.stats.cost;
+		data.warfare = duplicate(this.actor.data.flags.warfare || {});
+		data.unitCost = data.warfare.stats?.cost == null ? '—' : data.warfare.stats.cost;
 		data.warfareItems = {
 			traits: [],
 			actions: [],
@@ -55,7 +56,27 @@ export default class WarfareUnitSheet extends ActorSheet5e {
 			});
 		}
 
+		if (data.warfare.stats?.casualties?.max) {
+			this._formatCasualties(data.warfare.stats.casualties);
+		}
+
 		return data;
+	}
+
+	_formatCasualties (casualties) {
+		let display = '';
+		for (let i = 1; i <= casualties.max; i++) {
+			const classes = ['warfare-unit-casualties-pip'];
+			if (i <= casualties.remaining) {
+				classes.push('warfare-unit-casualties-pip-full');
+			} else {
+				classes.push('warfare-unit-casualties-pip-empty');
+			}
+
+			display += `<div class="${classes.join(' ')}" data-n="${i}"><span></span></div>`;
+		}
+
+		casualties.display = display;
 	}
 
 	_onAddItem (evt) {
@@ -96,6 +117,22 @@ export default class WarfareUnitSheet extends ActorSheet5e {
 		}
 
 		this.actor.deleteEmbeddedEntity('OwnedItem', target.parentElement.dataset.itemId);
+	}
+
+	_onCasualtyClicked (evt) {
+		const casualties = this.actor.getFlag('warfare', 'stats.casualties');
+		const n = Number(evt.currentTarget.dataset.n);
+		let taken = casualties.taken;
+
+		if (n > casualties.remaining) {
+			taken--;
+		} else {
+			taken++;
+		}
+
+		if (taken > -1 && taken <= casualties.max) {
+			this.actor.setFlag('warfare', 'stats.casualties.taken', taken);
+		}
 	}
 
 	_onConfigClicked () {

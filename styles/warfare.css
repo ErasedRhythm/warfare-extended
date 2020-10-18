@@ -137,6 +137,10 @@ label.warfare-unit-name {
 	margin-bottom: 4px;
 }
 
+.warfare-unit-casualties+.warfare-config-add-items {
+	margin-top: 2px;
+}
+
 .warfare-config .warfare-config-add-items {
 	display: flex;
 }
@@ -196,4 +200,57 @@ label.warfare-unit-name {
 
 .warfare-unit-feature p {
 	margin: 6px 0;
+}
+
+.warfare-unit-casualties {
+	display: flex;
+	justify-content: center;
+	padding-bottom: 5px;
+}
+
+.warfare-unit-casualties-pips {
+	display: flex;
+	align-items: center;
+}
+
+.warfare-unit-casualties-pip {
+	display: flex;
+	align-items: center;
+	padding-left: 3px;
+	cursor: pointer;
+	position: relative;
+	margin-left: 5px;
+	width: 15px;
+	height: 15px;
+}
+
+.warfare-unit-casualties-pip:first-child {
+	margin-left: 0;
+}
+
+.warfare-unit-casualties-pip span {
+	width: 10px;
+	height: 10px;
+	border: 1px solid var(--pip);
+	border-radius: 50%;
+}
+
+.warfare-unit-casualties-pip-full span {
+	background-color: var(--pip);
+}
+
+.warfare-unit-casualties-pips:not(.warfare-unit-casualties-diminished) .warfare-unit-casualties-pip-full:before {
+	content: '';
+	width: 11px;
+	height: 11px;
+	border: 2px solid var(--pip);
+	border-radius: 50%;
+	position: absolute;
+	left: 1px;
+}
+
+.warfare-unit-casualties-pips:not(.warfare-unit-casualties-diminished) .warfare-unit-casualties-pip-full span {
+	width: 7px;
+	height: 7px;
+	margin-left: 2px;
 }

@@ -114,6 +114,14 @@
 			</div>
 		</div>
 	</section>
+	{{#if warfare.stats.casualties.max}}
+	<section class="warfare-unit-casualties">
+		<div title="{{localize 'WARFARE.Casualties'}}" class="warfare-unit-casualties-pips
+		     {{#if warfare.stats.casualties.diminished}}warfare-unit-casualties-diminished{{/if}}">
+			{{{warfare.stats.casualties.display}}}
+		</div>
+	</section>
+	{{/if}}
 	<section class="warfare-config-add-items">
 		<a class="warfare-config-add-item">
 			<span>{{localize 'WARFARE.AddTrait'}}</span>

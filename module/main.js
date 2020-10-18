@@ -1,7 +1,9 @@
 import WarfareUnitSheet from './sheet.js';
+import extendActor from './unit.js';
 
 Hooks.on('init', () => {
 	Actors.registerSheet('dnd5e', WarfareUnitSheet, {types: ['npc'], makeDefault: false});
+	extendActor();
 });
 
 Hooks.on('setup', () => {
