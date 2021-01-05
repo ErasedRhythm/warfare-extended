@@ -1,7 +1,7 @@
 .warfare.window-app .window-content {
-	background: var(--bg);
-	border: 8px solid var(--border);
-	box-shadow: var(--box-shadow);
+	background: var(--war-bg);
+	border: 8px solid var(--war-border);
+	box-shadow: var(--war-box-shadow);
 }
 
 .warfare form {
@@ -13,12 +13,12 @@
 	top: 46px;
 	right: 16px;
 	font-size: 16px;
-	color: var(--config-colour);
+	color: var(--war-config-colour);
 }
 
 .warfare-unit-config:hover {
 	text-shadow: none;
-	color: var(--highlight);
+	color: var(--war-highlight);
 }
 
 .warfare form input {
@@ -27,7 +27,7 @@
 	height: unset;
 	border: none;
 	background: transparent;
-	color: var(--edit);
+	color: var(--war-edit);
 }
 
 .warfare form input.warfare-unit-stat,
@@ -67,7 +67,7 @@
 
 .warfare-unit-keyword-row label span {
 	text-transform: uppercase;
-	color: var(--base);
+	color: var(--war-base);
 	font-weight: bold;
 	font-size: 13px;
 }
@@ -83,11 +83,11 @@
 label.warfare-unit-name {
 	text-transform: uppercase;
 	font-weight: bold;
-	color: var(--highlight);
+	color: var(--war-highlight);
 	font-size: 18px;
 	width: 100%;
 	display: block;
-	border-bottom: 1px solid var(--underscore);
+	border-bottom: 1px solid var(--war-underscore);
 	margin-bottom: 2px;
 }
 
@@ -97,14 +97,14 @@ label.warfare-unit-name {
 
 .warfare-unit-stat-row {
 	display: flex;
-	border-bottom: 1px solid var(--underscore);
+	border-bottom: 1px solid var(--war-underscore);
 	padding: 1px 0;
 }
 
 .warfare-unit-cost-row {
 	margin-top: 10px;
 	text-transform: uppercase;
-	color: var(--base);
+	color: var(--war-base);
 	display: flex;
 	justify-content: flex-end;
 	padding: 0 0 4px 0;
@@ -125,7 +125,7 @@ label.warfare-unit-name {
 
 .warfare-unit-stat-key {
 	text-transform: uppercase;
-	color: var(--highlight);
+	color: var(--war-highlight);
 	font-weight: bold;
 	font-size: 14px;
 	width: 50%;
@@ -135,7 +135,7 @@ label.warfare-unit-name {
 .warfare-unit-stat-value {
 	width: 50%;
 	font-size: 14px;
-	color: var(--highlight);
+	color: var(--war-highlight);
 	font-weight: bold;
 }
 
@@ -157,7 +157,7 @@ label.warfare-unit-name {
 .warfare-config-item a {
 	text-transform: uppercase;
 	font-size: 12px;
-	color: var(--config-colour);
+	color: var(--war-config-colour);
 }
 
 .warfare-config-item a {
@@ -166,13 +166,13 @@ label.warfare-unit-name {
 
 .warfare-config-item a.warfare-alert,
 .warfare-config-item a.warfare-alert:hover {
-	color: var(--alert);
+	color: var(--war-alert);
 }
 
 .warfare-config-add-items a:hover,
 .warfare-config-item a:hover {
 	text-shadow: none;
-	color: var(--highlight);
+	color: var(--war-highlight);
 }
 
 .warfare-config-item {
@@ -187,7 +187,7 @@ label.warfare-unit-name {
 	text-transform: uppercase;
 	font-size: 15px;
 	font-weight: bold;
-	color: var(--header);
+	color: var(--war-header);
 	margin-bottom: 0;
 }
 
@@ -195,7 +195,7 @@ label.warfare-unit-name {
 	margin-bottom: 8px;
 	font-size: 13px;
 	text-align: justify;
-	color: var(--text);
+	color: var(--war-text);
 }
 
 .warfare-unit-feature strong {
@@ -239,19 +239,19 @@ label.warfare-unit-name {
 .warfare-unit-casualties-pip span {
 	width: 10px;
 	height: 10px;
-	border: 1px solid var(--pip);
+	border: 1px solid var(--war-pip);
 	border-radius: 50%;
 }
 
 .warfare-unit-casualties-pip-full span {
-	background-color: var(--pip);
+	background-color: var(--war-pip);
 }
 
 .warfare-unit-casualties-pips:not(.warfare-unit-casualties-diminished) .warfare-unit-casualties-pip-full:before {
 	content: '';
 	width: 11px;
 	height: 11px;
-	border: 2px solid var(--pip);
+	border: 2px solid var(--war-pip);
 	border-radius: 50%;
 	position: absolute;
 	left: 1px;

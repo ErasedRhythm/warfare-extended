@@ -1,14 +1,14 @@
 :root {
-	--base: #51586a;
-	--border: #434857;
-	--bg: #252830;
-	--highlight: #cfd2da;
-	--config-colour: #999;
-	--underscore: #434857;
-	--box-shadow: none;
-	--edit: white;
-	--alert: #c53131;
-	--text: #cfd2da;
-	--header: #51586a;
-	--pip: #51586a;
+	--war-base: #51586a;
+	--war-border: #434857;
+	--war-bg: #252830;
+	--war-highlight: #cfd2da;
+	--war-config-colour: #999;
+	--war-underscore: #434857;
+	--war-box-shadow: none;
+	--war-edit: white;
+	--war-alert: #c53131;
+	--war-text: #cfd2da;
+	--war-header: #51586a;
+	--war-pip: #51586a;
 }
