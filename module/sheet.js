@@ -98,11 +98,11 @@ export default class WarfareUnitSheet extends ActorSheet5e {
 			name = 'NewOrder';
 		}
 
-		this.actor.createEmbeddedEntity('OwnedItem', {
+		this.actor.createEmbeddedDocuments('Item', [{
 			type: 'feat',
 			name: game.i18n.localize(`WARFARE.${name}`),
 			data: data
-		}, {renderSheet: true});
+		}], {renderSheet: true});
 	}
 
 	_onEditItem (evt) {
@@ -117,7 +117,7 @@ export default class WarfareUnitSheet extends ActorSheet5e {
 			return;
 		}
 
-		this.actor.deleteEmbeddedEntity('OwnedItem', target.parentElement.dataset.itemId);
+		this.actor.deleteEmbeddedDocuments('Item', [target.parentElement.dataset.itemId]);
 	}
 
 	_onCasualtyClicked (evt) {
