@@ -136,6 +136,11 @@ export default class WarfareUnitSheet extends ActorSheet5e {
 		}
 	}
 
+	_onChangeInputDelta () {
+		// Disable this entirely as this behaviour is counter-intuitive for
+		// this sheet.
+	}
+
 	_onConfigClicked () {
 		const currentStatus = !!this.actor.getFlag('warfare', 'sheet.config');
 		this.actor.setFlag('warfare', 'sheet.config', !currentStatus);

@@ -8,12 +8,14 @@
 			       value="{{actor.name}}" placeholder="{{localize 'WARFARE.UnitName'}}">
 		</label>
 		<div class="warfare-unit-keyword-row">
+			{{#if (or warfare.details.ancestry warfare.sheet.config)}}
 			<label>
 				<span>{{warfare.details.ancestry}}</span>
 				<input type="text" class="warfare-unit-keyword" data-dtype="String"
 				       name="flags.warfare.details.ancestry" value="{{warfare.details.ancestry}}"
 				       placeholder="{{localize 'WARFARE.Ancestry'}}">
 			</label>
+			{{/if}}
 			<label>
 				<span>{{warfare.details.experience}}</span>
 				<input type="text" class="warfare-unit-keyword" data-dtype="String"
@@ -23,12 +25,14 @@
 			</label>
 		</div>
 		<div class="warfare-unit-keyword-row">
+			{{#if (or warfare.details.equipment warfare.sheet.config)}}
 			<label>
 				<span>{{warfare.details.equipment}}</span>
 				<input type="text" class="warfare-unit-keyword" data-dtype="String"
 				       name="flags.warfare.details.equipment" value="{{warfare.details.equipment}}"
 				       placeholder="{{localize 'DND5E.ItemTypeEquipment'}}">
 			</label>
+			{{/if}}
 			<label>
 				<span>{{warfare.details.type}}</span>
 				<input type="text" class="warfare-unit-keyword" data-dtype="String"

@@ -42,6 +42,11 @@ Handlebars.registerHelper('number-format', function (n, options) {
 	return sign && n >= 0 ? '+' + n : n;
 });
 
+Handlebars.registerHelper('or', function (...args) {
+	args.pop();
+	return args.reduce((acc, x) => acc || !!x);
+});
+
 function setTheme (theme) {
 	const head = document.getElementsByTagName('head')[0];
 	if (theme === 'dark') {
