@@ -49,7 +49,9 @@ export default function extendActor () {
 			parts: parts,
 			data: data,
 			title: game.i18n.localize(attributeLabels[attr]),
-			speaker: ChatMessage.getSpeaker({actor: this})
+			messageData: {
+				speaker: ChatMessage.getSpeaker({actor: this})
+			}
 		});
 
 		return d20Roll(rollData);
