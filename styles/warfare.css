@@ -114,6 +114,7 @@ label.warfare-unit-name {
 .warfare-unit-cost-row h3 {
 	font-size: 13px;
 	margin: 0 5px 0 0;
+	border: none;
 }
 
 .warfare-unit-stat-row > div {
@@ -189,6 +190,7 @@ label.warfare-unit-name {
 	font-weight: bold;
 	color: var(--war-header);
 	margin-bottom: 0;
+	border: none;
 }
 
 .warfare-unit-feature {

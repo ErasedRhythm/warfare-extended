@@ -1,6 +1,3 @@
-import Actor5e from '../../../systems/dnd5e/module/actor/entity.js';
-import {d20Roll} from '../../../systems/dnd5e/module/dice.js';
-
 const attributeLabels = {
 	attack: 'WARFARE.Attack',
 	power: 'WARFARE.Power',
@@ -8,6 +5,7 @@ const attributeLabels = {
 };
 
 export default function extendActor () {
+	const Actor5e = dnd5e.documents.Actor5e;
 	Actor5e.prototype.prepareDerivedData = (function () {
 		const original = Actor5e.prototype.prepareDerivedData;
 		return function () {
@@ -54,6 +52,6 @@ export default function extendActor () {
 			}
 		});
 
-		return d20Roll(rollData);
+		return dnd5e.dice.d20Roll(rollData);
 	};
 };

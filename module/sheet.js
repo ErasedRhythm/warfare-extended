@@ -1,6 +1,4 @@
-import ActorSheet5e from '../../../systems/dnd5e/module/actor/sheets/base.js';
-
-export default class WarfareUnitSheet extends ActorSheet5e {
+export default class WarfareUnitSheet extends dnd5e.applications.actor.ActorSheet5e {
 	static get defaultOptions () {
 		return mergeObject(super.defaultOptions, {
 			classes: ['warfare', 'warfare-unit'],
@@ -28,9 +26,9 @@ export default class WarfareUnitSheet extends ActorSheet5e {
 		html.find('[data-roll]').click(this._onRollAttribute.bind(this));
 	}
 
-	getData () {
-		const data = super.getData();
-		data.warfare = duplicate(this.actor.data.flags.warfare || {});
+	async getData () {
+		const data = await super.getData();
+		data.warfare = duplicate(this.actor.flags.warfare || {});
 		data.unitCost = data.warfare.stats?.cost == null ? '—' : data.warfare.stats.cost;
 		data.warfareItems = {
 			traits: [],
@@ -39,7 +37,7 @@ export default class WarfareUnitSheet extends ActorSheet5e {
 		};
 
 		for (const item of data.items) {
-			const activation = item.data.activation.type;
+			const activation = item.system.activation.type;
 			if (activation === 'action') {
 				data.warfareItems.actions.push(item);
 			} else if (activation === 'order') {
@@ -48,13 +46,15 @@ export default class WarfareUnitSheet extends ActorSheet5e {
 				data.warfareItems.traits.push(item);
 			}
 
-			item.data.description.enriched = TextEditor.enrichHTML(item.data.description.value, {
-				secrets: data.owner,
-				documents: true,
-				links: true,
-				rolls: true,
-				rollData: this.actor.getRollData()
-			});
+			item.system.description.enriched =
+				await TextEditor.enrichHTML(item.system.description.value, {
+					secrets: data.owner,
+					documents: true,
+					links: true,
+					rolls: true,
+					rollData: this.actor.getRollData(),
+					async: true
+				});
 		}
 
 		if (data.warfare.stats?.casualties?.max) {
@@ -82,7 +82,7 @@ export default class WarfareUnitSheet extends ActorSheet5e {
 
 	_onAddItem (evt) {
 		const dataset = evt.currentTarget.dataset;
-		const data = {
+		const system = {
 			activation: {
 				cost: dataset.cost ? Number(dataset.cost) : null,
 				type: dataset.type || ""
@@ -99,9 +99,9 @@ export default class WarfareUnitSheet extends ActorSheet5e {
 		}
 
 		this.actor.createEmbeddedDocuments('Item', [{
+			system,
 			type: 'feat',
-			name: game.i18n.localize(`WARFARE.${name}`),
-			data: data
+			name: game.i18n.localize(`WARFARE.${name}`)
 		}], {renderSheet: true});
 	}
 
