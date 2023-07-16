@@ -1,6 +1,6 @@
 const attributeLabels = {
 	attack: 'WARFARE.Attack',
-	communication: 'WARFARE.Communication',
+	command: 'WARFARE.Command',
 	power: 'WARFARE.Power',
 	morale: 'WARFARE.Morale'
 };
