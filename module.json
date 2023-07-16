@@ -4,7 +4,7 @@
 	"title": "Warfare Extended",
 	"description": "An implementation of MCDM's warfare rules.",
 	"authors": [{"name": "Kim Mantas"}, {"name": "ErasedRhythm"}],
-	"version": "1.2.8",
+	"version": "1.2.9",
 	"minimumCoreVersion": "10",
 	"compatibleCoreVersion": "11",
 	"compatibility": {
