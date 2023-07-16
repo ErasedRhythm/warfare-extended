@@ -29,7 +29,9 @@ export default class WarfareUnitSheet extends dnd5e.applications.actor.ActorShee
 	async getData () {
 		const data = await super.getData();
 		data.warfare = duplicate(this.actor.flags["warfare-extended"] || {});
-		data.unitCost = data.warfare.stats?.cost == null ? '—' : data.warfare.stats.cost;
+		data.unitTier = data.warfare.stats?.tier == null ? '—' : data.warfare.stats.tier;
+		data.unitDamage = data.warfare.stats?.damage == null ? '—' : data.warfare.stats.damage;
+		data.unitAPA = data.warfare.stats?.apa == null ? '—' : data.warfare.stats.apa;
 		data.warfareItems = {
 			traits: [],
 			actions: [],

@@ -43,11 +43,23 @@
 	</header>
 	<section class="warfare-unit-stats">
 		<div class="warfare-unit-stat-row warfare-unit-cost-row">
-			<h3>{{localize 'WARFARE.Cost'}}:</h3>
+			<h3>{{localize 'WARFARE.Tier'}}:</h3>
+			<label>
+				<span>{{unitTier}}</span>
+				<input type="text" class="warfare-unit-cost" data-dtype="Number" placeholder="&mdash;"
+				       name="flags.warfare-extended.stats.tier" value="{{warfare.stats.tier}}">
+			</label>
+			<h3>{{localize 'WARFARE.Damage'}}:</h3>
 			<label>
 				<span>{{unitCost}}</span>
 				<input type="text" class="warfare-unit-cost" data-dtype="Number" placeholder="&mdash;"
-				       name="flags.warfare-extended.stats.cost" value="{{warfare.stats.cost}}">
+				       name="flags.warfare-extended.stats.damage" value="{{warfare.stats.damage}}">
+			</label>
+			<h3>{{localize 'WARFARE.APA'}}:</h3>
+			<label>
+				<span>{{unitAPA}}</span>
+				<input type="text" class="warfare-unit-cost" data-dtype="Number" placeholder="&mdash;"
+				       name="flags.warfare-extended.stats.apa" value="{{warfare.stats.apa}}">
 			</label>
 		</div>
 		<div class="warfare-unit-stat-row">
