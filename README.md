@@ -1,12 +1,14 @@
 # Warfare
 
-A [FoundryVTT](https://foundryvtt.com/) module that provides an implementation of MCDM's warfare system as seen in [Strongholds & Followers](https://shop.mcdmproductions.com/collections/strongholds-followers). The module adds a special sheet for NPC Actors that designates them as a unit and allows you to input any units created with the warfare system.
+_This project extends the work of Kim Mantas' warfare plugin https://bitbucket.org/Fyorl/warfare/src/master/_
+
+A [FoundryVTT](https://foundryvtt.com/) module that provides an implementation of MCDM's warfare system as seen in [Kingdoms & Warfare](https://shop.mcdmproductions.com/collections/in-stock/products/kingdoms-and-warfare-pdf). The module adds a special sheet for NPC Actors that designates them as a unit and allows you to input any units created with the warfare system.
 
 This project is not affiliated with MCDM and is in no way endorsed by them.
 
-![Unit Card Light](https://bitbucket.org/Fyorl/warfare/raw/master/unit-card-light.jpg)
+![Unit Card Light](unit-card-light.jpg)
 
-![Unit Card Dark](https://bitbucket.org/Fyorl/warfare/raw/master/unit-card-dark.jpg)
+![Unit Card Dark](unit-card-dark.jpg)
 
 ## License
 

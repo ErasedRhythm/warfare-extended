@@ -123,6 +123,20 @@
 				</div>
 			</div>
 		</div>
+		<div class="warfare-unit-stat-row">
+			<div>
+				<div class="warfare-unit-stat-key warfare-rollable" data-roll="communication">
+					{{localize 'WARFARE.Communication'}}:
+				</div>
+				<div class="warfare-unit-stat-value">
+					<label>
+						<span>{{number-format warfare.stats.morale sign=true decimals=0}}</span>
+						<input type="text" class="warfare-unit-stat" data-dtype="Number" placeholder="&mdash;"
+						       name="flags.warfare.stats.communication" value="{{warfare.stats.communication}}">
+					</label>
+				</div>
+			</div>
+		</div>
 	</section>
 	{{#if warfare.stats.casualties.max}}
 	<section class="warfare-unit-casualties">
