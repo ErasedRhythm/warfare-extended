@@ -28,6 +28,7 @@ export default class WarfareUnitSheet extends dnd5e.applications.actor.ActorShee
 
 	async getData () {
 		const data = await super.getData();
+		console.log("1", this, data);
 		data.warfare = duplicate(this.actor.flags.warfare || {});
 		data.unitCost = data.warfare.stats?.cost == null ? '—' : data.warfare.stats.cost;
 		data.warfareItems = {
@@ -60,6 +61,7 @@ export default class WarfareUnitSheet extends dnd5e.applications.actor.ActorShee
 		if (data.warfare.stats?.casualties?.max) {
 			this._formatCasualties(data.warfare.stats.casualties);
 		}
+		console.log("2", this, data);
 
 		return data;
 	}
