@@ -12,14 +12,14 @@
 			<label>
 				<span>{{warfare.details.ancestry}}</span>
 				<input type="text" class="warfare-unit-keyword" data-dtype="String"
-				       name="flags.warfare.details.ancestry" value="{{warfare.details.ancestry}}"
+				       name="flags.warfare-extended.details.ancestry" value="{{warfare.details.ancestry}}"
 				       placeholder="{{localize 'WARFARE.Ancestry'}}">
 			</label>
 			{{/if}}
 			<label>
 				<span>{{warfare.details.experience}}</span>
 				<input type="text" class="warfare-unit-keyword" data-dtype="String"
-				       name="flags.warfare.details.experience"
+				       name="flags.warfare-extended.details.experience"
 				       value="{{warfare.details.experience}}"
 				       placeholder="{{localize 'WARFARE.Experience'}}">
 			</label>
@@ -29,14 +29,14 @@
 			<label>
 				<span>{{warfare.details.equipment}}</span>
 				<input type="text" class="warfare-unit-keyword" data-dtype="String"
-				       name="flags.warfare.details.equipment" value="{{warfare.details.equipment}}"
+				       name="flags.warfare-extended.details.equipment" value="{{warfare.details.equipment}}"
 				       placeholder="{{localize 'DND5E.ItemTypeEquipment'}}">
 			</label>
 			{{/if}}
 			<label>
 				<span>{{warfare.details.type}}</span>
 				<input type="text" class="warfare-unit-keyword" data-dtype="String"
-				       name="flags.warfare.details.type" value="{{warfare.details.type}}"
+				       name="flags.warfare-extended.details.type" value="{{warfare.details.type}}"
 				       placeholder="{{localize 'DND5E.Type'}}">
 			</label>
 		</div>
@@ -47,7 +47,7 @@
 			<label>
 				<span>{{unitCost}}</span>
 				<input type="text" class="warfare-unit-cost" data-dtype="Number" placeholder="&mdash;"
-				       name="flags.warfare.stats.cost" value="{{warfare.stats.cost}}">
+				       name="flags.warfare-extended.stats.cost" value="{{warfare.stats.cost}}">
 			</label>
 		</div>
 		<div class="warfare-unit-stat-row">
@@ -59,7 +59,7 @@
 					<label>
 						<span>{{number-format warfare.stats.attack sign=true decimals=0}}</span>
 						<input type="text" class="warfare-unit-stat" data-dtype="Number" placeholder="&mdash;"
-						       name="flags.warfare.stats.attack" value="{{warfare.stats.attack}}">
+						       name="flags.warfare-extended.stats.attack" value="{{warfare.stats.attack}}">
 					</label>
 				</div>
 			</div>
@@ -69,7 +69,7 @@
 					<label>
 						<span>{{warfare.stats.defense}}</span>
 						<input type="text" class="warfare-unit-stat" data-dtype="Number" placeholder="&mdash;"
-						       name="flags.warfare.stats.defense" value="{{warfare.stats.defense}}">
+						       name="flags.warfare-extended.stats.defense" value="{{warfare.stats.defense}}">
 					</label>
 				</div>
 			</div>
@@ -83,7 +83,7 @@
 					<label>
 						<span>{{number-format warfare.stats.power sign=true decimals=0}}</span>
 						<input type="text" class="warfare-unit-stat" data-dtype="Number" placeholder="&mdash;"
-						       name="flags.warfare.stats.power" value="{{warfare.stats.power}}">
+						       name="flags.warfare-extended.stats.power" value="{{warfare.stats.power}}">
 					</label>
 				</div>
 			</div>
@@ -93,7 +93,7 @@
 					<label>
 						<span>{{warfare.stats.toughness}}</span>
 						<input type="text" class="warfare-unit-stat" data-dtype="Number" placeholder="&mdash;"
-						       name="flags.warfare.stats.toughness" value="{{warfare.stats.toughness}}">
+						       name="flags.warfare-extended.stats.toughness" value="{{warfare.stats.toughness}}">
 					</label>
 				</div>
 			</div>
@@ -107,7 +107,7 @@
 					<label>
 						<span>{{number-format warfare.stats.morale sign=true decimals=0}}</span>
 						<input type="text" class="warfare-unit-stat" data-dtype="Number" placeholder="&mdash;"
-						       name="flags.warfare.stats.morale" value="{{warfare.stats.morale}}">
+						       name="flags.warfare-extended.stats.morale" value="{{warfare.stats.morale}}">
 					</label>
 				</div>
 			</div>
@@ -117,7 +117,7 @@
 					<label>
 						<span>{{warfare.stats.size}}</span>
 						<input type="text" class="warfare-unit-stat warfare-unit-size" data-dtype="String"
-						       placeholder="1d4" name="flags.warfare.stats.size"
+						       placeholder="1d4" name="flags.warfare-extended.stats.size"
 						       value="{{warfare.stats.size}}">
 					</label>
 				</div>
@@ -132,7 +132,7 @@
 					<label>
 						<span>{{number-format warfare.stats.morale sign=true decimals=0}}</span>
 						<input type="text" class="warfare-unit-stat" data-dtype="Number" placeholder="&mdash;"
-						       name="flags.warfare.stats.communication" value="{{warfare.stats.communication}}">
+						       name="flags.warfare-extended.stats.communication" value="{{warfare.stats.communication}}">
 					</label>
 				</div>
 			</div>
