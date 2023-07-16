@@ -28,7 +28,6 @@ export default class WarfareUnitSheet extends dnd5e.applications.actor.ActorShee
 
 	async getData () {
 		const data = await super.getData();
-		console.log("1", this, data);
 		data.warfare = duplicate(this.actor.flags["warfare-extended"] || {});
 		data.unitCost = data.warfare.stats?.cost == null ? '—' : data.warfare.stats.cost;
 		data.warfareItems = {
@@ -61,7 +60,6 @@ export default class WarfareUnitSheet extends dnd5e.applications.actor.ActorShee
 		if (data.warfare.stats?.casualties?.max) {
 			this._formatCasualties(data.warfare.stats.casualties);
 		}
-		console.log("2", this, data);
 
 		return data;
 	}
@@ -109,11 +107,13 @@ export default class WarfareUnitSheet extends dnd5e.applications.actor.ActorShee
 
 	_onEditItem (evt) {
 		const item = this.actor.items.get(evt.currentTarget.parentElement.dataset.itemId);
+		console.log(evt, this.actor.items, item)
 		item.sheet.render(true);
 	}
 
 	_onRemoveItem (evt) {
 		const target = evt.currentTarget;
+		console.log(evt, this.actor)
 		if (!target.classList.contains('warfare-alert')) {
 			target.classList.add('warfare-alert');
 			return;
