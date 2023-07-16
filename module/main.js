@@ -15,7 +15,7 @@ Hooks.on('setup', () => {
 });
 
 Hooks.on('ready', () => {
-	game.settings.register('warfare', 'theme', {
+	game.settings.register('warfare-extended', 'theme', {
 		name: 'WARFARE.Theme',
 		scope: 'user',
 		config: true,
@@ -28,7 +28,7 @@ Hooks.on('ready', () => {
 		}
 	});
 
-	setTheme(game.settings.get('warfare', 'theme'));
+	setTheme(game.settings.get('warfare-extended', 'theme'));
 });
 
 Handlebars.registerHelper('number-format', function (n, options) {
@@ -53,7 +53,7 @@ function setTheme (theme) {
 		const link = document.createElement('link');
 		link.type = 'text/css';
 		link.rel = 'stylesheet';
-		link.href = 'modules/warfare/styles/dark.css';
+		link.href = 'modules/warfare-extended/styles/dark.css';
 		link.id = 'warfare-dark-sheet';
 		head.appendChild(link);
 	} else {

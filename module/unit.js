@@ -11,7 +11,7 @@ export default function extendActor () {
 		const original = Actor5e.prototype.prepareDerivedData;
 		return function () {
 			original.apply(this, arguments);
-			const stats = this.getFlag('warfare', 'stats');
+			const stats = this.getFlag('warfare-extended', 'stats');
 			if (!stats) {
 				return;
 			}
@@ -37,7 +37,7 @@ export default function extendActor () {
 	})();
 
 	Actor5e.prototype.rollUnitAttribute = function (attr, options = {}) {
-		const stats = this.getFlag('warfare', 'stats');
+		const stats = this.getFlag('warfare-extended', 'stats');
 		if (!stats) {
 			return;
 		}

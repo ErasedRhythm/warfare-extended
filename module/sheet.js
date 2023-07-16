@@ -1,7 +1,7 @@
 export default class WarfareUnitSheet extends dnd5e.applications.actor.ActorSheet5e {
 	static get defaultOptions () {
 		return mergeObject(super.defaultOptions, {
-			classes: ['warfare', 'warfare-unit'],
+			classes: ['warfare-extended', 'warfare-unit'],
 			scrollY: ['form'],
 			width: 340,
 			height: 415
@@ -121,7 +121,7 @@ export default class WarfareUnitSheet extends dnd5e.applications.actor.ActorShee
 	}
 
 	_onCasualtyClicked (evt) {
-		const casualties = this.actor.getFlag('warfare', 'stats.casualties');
+		const casualties = this.actor.getFlag('warfare-extended', 'stats.casualties');
 		const n = Number(evt.currentTarget.dataset.n);
 		let taken = casualties.taken;
 
@@ -132,7 +132,7 @@ export default class WarfareUnitSheet extends dnd5e.applications.actor.ActorShee
 		}
 
 		if (taken > -1 && taken <= casualties.max) {
-			this.actor.setFlag('warfare', 'stats.casualties.taken', taken);
+			this.actor.setFlag('warfare-extended', 'stats.casualties.taken', taken);
 		}
 	}
 
@@ -142,8 +142,8 @@ export default class WarfareUnitSheet extends dnd5e.applications.actor.ActorShee
 	}
 
 	_onConfigClicked () {
-		const currentStatus = !!this.actor.getFlag('warfare', 'sheet.config');
-		this.actor.setFlag('warfare', 'sheet.config', !currentStatus);
+		const currentStatus = !!this.actor.getFlag('warfare-extended', 'sheet.config');
+		this.actor.setFlag('warfare-extended', 'sheet.config', !currentStatus);
 	}
 
 	_onRollAttribute (evt) {
