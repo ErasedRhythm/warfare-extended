@@ -9,7 +9,7 @@ export default class WarfareUnitSheet extends dnd5e.applications.actor.ActorShee
 	}
 
 	get template () {
-		return 'modules/warfare/templates/unit-card.html';
+		return 'modules/warfare-extended/templates/unit-card.html';
 	}
 
 	activateListeners (html) {
